@@ -1,53 +1,55 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <meta charset="UTF-8">
-    <title>3D Model Website</title>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AMD</title>
+    <link rel="icon"  href="./assets/img/amd11.png"/>
+    <meta http-equiv="refresh"
+    content="8; url =home.html" /> 
+    <link rel="stylesheet" href="./assets/css/load.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="./assets/script/load.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 </head>
-
 <body>
-    <div id="container">
-        <div id="navbar">
-            <div id="logo">
-                <img src="assets/logo.png" alt="">
-            </div>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    <h1 class="title ">
+        <span>AMD</span>  is a Kerala based company being managed by a team who are equipped with extensive
+trading experience in the fields of Industrial and Agricultural (Sales).
+   </h1>
+
+        <div id="preloader">
+            <div class="p "><img src="./assets/img/amd1w.png" alt=""></div>
         </div>
-        <div id="aSide">
-            <img src="assets/background.png" alt="">
-            <model-viewer src="assets/Drossel.gltf" alt="model robot" auto-rotate camera-controls ar ios-src="assets/Drossel.gltf"></model-viewer>
-        </div>
-        <div id="content">
-            <h2>ROBOT MODEL</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque laboriosam, sapiente veniam quae perferendis sunt cumque iusto distinctio totam facilis. Obcaecati minima at magni eligendi ipsum hic officia iure ipsam?</p>
-            <button>Find More</button>
-        </div>
-        <div id="icons">
-            <div id="iconsLogo">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-twitter"></i>
-            </div>
-        </div>
-        <div id="pagination">
-            <div id="leftBtn">
-                <i class="fas fa-angle-left"></i>
-            </div>
-            <div id="rightBtn">
-                <i class="fas fa-angle-right"></i>
-            </div>
-        </div>
-    </div>
+
+        <script>
+
+        paceOptions = {
+        ajax: true,
+        document: true,
+        eventLag: false
+        };
+
+        Pace.on('done', function() {
+        $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+
+
+        $('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+
+        TweenMax.from(".title", 2, {
+             delay: 1.8,
+                  y: 10,
+                  opacity: 0,
+                  ease: Expo.easeInOut
+            })
+       });
+
+      </script>
+
 </body>
 </html>
